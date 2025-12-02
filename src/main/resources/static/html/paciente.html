@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel del Paciente - Clínica Rodríguez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Clínica Rodríguez</a>
+      <button class="btn btn-outline-light ms-auto" onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="container paciente-section">
+
+    <!-- Reservar turno -->
+    <div class="paciente-box">
+      <h2>Reservar Turno</h2>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="especialidad" class="form-label">Especialidad:</label>
+          <select id="especialidad" class="form-select">
+            <option value="">Seleccionar...</option>
+            <option value="Clínico">Clínico</option>
+            <option value="Cardiología">Cardiología</option>
+            <option value="Pediatría">Pediatría</option>
+            <option value="Dermatología">Dermatología</option>
+            <option value="Ginecología">Ginecología</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="fecha" class="form-label">Fecha:</label>
+          <input type="date" id="fecha" class="form-control">
+        </div>
+        <div class="col-12 mb-3">
+          <button class="btn btn-dark" onclick="buscarTurnosDisponibles()">Buscar</button>
+        </div>
+      </div>
+      <div id="turnosDisponibles"></div>
+    </div>
+
+    <!-- Turnos vigentes -->
+    <div class="paciente-box">
+      <h2>Mis Turnos</h2>
+      <div class="mb-3">
+        <label for="filtroEspecialidad" class="form-label">Filtrar por especialidad:</label>
+        <select id="filtroEspecialidad" class="form-select" onchange="cargarMisTurnos()">
+          <option value="">Todos</option>
+          <option value="Clínico">Clínico</option>
+          <option value="Cardiología">Cardiología</option>
+          <option value="Pediatría">Pediatría</option>
+          <option value="Dermatología">Dermatología</option>
+          <option value="Ginecología">Ginecología</option>
+        </select>
+      </div>
+      <div id="misTurnos"></div>
+    </div>
+
+    <!-- Historial -->
+    <div class="paciente-box">
+      <h2>Historial de Turnos</h2>
+      <div class="mb-3">
+        <label for="historialEspecialidad" class="form-label">Filtrar por especialidad:</label>
+        <select id="historialEspecialidad" class="form-select" onchange="cargarHistorialTurnos()">
+          <option value="">Todos</option>
+          <option value="Clínico">Clínico</option>
+          <option value="Cardiología">Cardiología</option>
+          <option value="Pediatría">Pediatría</option>
+          <option value="Dermatología">Dermatología</option>
+          <option value="Ginecología">Ginecología</option>
+        </select>
+      </div>
+      <div id="historialTurnos"></div>
+    </div>
+
+  </div>
+
+  <!-- Agregamos el script compartido -->
+  <script src="/js/seguridad.js"></script>
+
+  <script>
+    let pacienteId = null;
+
+    async function obtenerPacienteId() {
+      const usuario = await verificarAcceso("PACIENTE");
+      if (!usuario) return;
+
+      const token = localStorage.getItem("token");
+
+      const pacienteRes = await fetch(`/api/pacientes/correo/${usuario.correo}`, {
+        headers: { Authorization: "Bearer " + token }
+      });
+
+      const paciente = await pacienteRes.json();
+      pacienteId = paciente.id;
+
+      cargarMisTurnos();
+      cargarHistorialTurnos();
+    }
+
+    async function buscarTurnosDisponibles() {
+      const especialidad = document.getElementById("especialidad").value;
+      const fecha = document.getElementById("fecha").value;
+      const token = localStorage.getItem("token");
+      const contenedor = document.getElementById("turnosDisponibles");
+      contenedor.innerHTML = "";
+
+      if (!especialidad) {
+        contenedor.innerHTML = "<p>Seleccione una especialidad.</p>";
+        return;
+      }
+
+      const url = fecha
+        ? `/api/turnos/disponibles/especialidad/${especialidad}?fecha=${fecha}`
+        : `/api/turnos/disponibles/especialidad/${especialidad}`;
+
+      const res = await fetch(url, {
+        headers: { Authorization: "Bearer " + token }
+      });
+
+      const turnos = await res.json();
+
+      if (turnos.length === 0) {
+        contenedor.innerHTML = "<p>No hay turnos disponibles.</p>";
+        return;
+      }
+
+      turnos.forEach(t => {
+        const div = document.createElement("div");
+        div.className = "turno";
+        div.innerHTML = `
+          <strong>Fecha y hora:</strong> ${t.fechaHora.replace("T", " ")}<br/>
+          <strong>Médico:</strong> ${t.medicoNombre}<br/>
+          <strong>Especialidad:</strong> ${t.medicoEspecialidad}<br/>
+          <button onclick="reservarTurno(${t.id})">Reservar</button>
+        `;
+        contenedor.appendChild(div);
+      });
+    }
+
+    async function reservarTurno(turnoId) {
+      const token = localStorage.getItem("token");
+      const res = await fetch(`/api/turnos/${turnoId}/reservar?pacienteId=${pacienteId}`, {
+        method: "PATCH",
+        headers: { Authorization: "Bearer " + token }
+      });
+
+      if (res.ok) {
+        alert("Turno reservado con éxito.");
+        buscarTurnosDisponibles();
+        cargarMisTurnos();
+      } else {
+        alert("Error al reservar el turno.");
+      }
+    }
+
+    async function cargarMisTurnos() {
+  const especialidad = document.getElementById("filtroEspecialidad").value;
+  const token = localStorage.getItem("token");
+
+  const url = especialidad
+    ? `/api/turnos/paciente/${pacienteId}/vigentes?especialidad=${especialidad}`
+    : `/api/turnos/paciente/${pacienteId}/vigentes`;
+
+  const res = await fetch(url, {
+    headers: { Authorization: "Bearer " + token }
+  });
+
+  const turnos = await res.json();
+  const contenedor = document.getElementById("misTurnos");
+  contenedor.innerHTML = "";
+
+  if (turnos.length === 0) {
+    contenedor.innerHTML = "<p>No tenés turnos vigentes.</p>";
+    return;
+  }
+
+  turnos.forEach(t => {
+    const div = document.createElement("div");
+    div.className = "turno";
+    div.innerHTML = `
+      <strong>Fecha:</strong> ${t.fecha}<br/>
+      <strong>Hora:</strong> ${t.hora}<br/>
+      <strong>Estado:</strong> ${t.estado}<br/>
+      <strong>Médico:</strong> ${t.medico.usuario.nombre}<br/>
+      <strong>Especialidad:</strong> ${t.medico.especialidad}<br/>
+      <button onclick="cancelarTurno(${t.id})">Cancelar</button>
+    `;
+    contenedor.appendChild(div);
+  });
+}
+async function cancelarTurno(turnoId) {
+  const confirmacion = confirm("¿Estás seguro de que querés cancelar este turno?");
+  if (!confirmacion) return;
+
+  const token = localStorage.getItem("token");
+
+  const res = await fetch(`/api/turnos/${turnoId}/cancelar`, {
+    method: "PATCH",
+    headers: { Authorization: "Bearer " + token }
+  });
+
+  if (res.ok) {
+    alert("Turno cancelado con éxito.");
+    cargarMisTurnos();  // refresca la lista
+  } else {
+    alert("Error al cancelar el turno.");
+  }
+}
+
+
+    async function cargarHistorialTurnos() {
+      const especialidad = document.getElementById("historialEspecialidad").value;
+      const token = localStorage.getItem("token");
+
+      const url = especialidad
+        ? `/api/turnos/paciente/${pacienteId}/historial?especialidad=${especialidad}`
+        : `/api/turnos/paciente/${pacienteId}/historial`;
+
+      const res = await fetch(url, {
+        headers: { Authorization: "Bearer " + token }
+      });
+
+      const turnos = await res.json();
+      const contenedor = document.getElementById("historialTurnos");
+      contenedor.innerHTML = "";
+
+      if (turnos.length === 0) {
+        contenedor.innerHTML = "<p>No hay historial de turnos.</p>";
+        return;
+      }
+
+      turnos.forEach(t => {
+        const div = document.createElement("div");
+        div.className = "turno";
+        div.innerHTML = `
+          <strong>Fecha:</strong> ${t.fecha}<br/>
+          <strong>Hora:</strong> ${t.hora}<br/>
+          <strong>Estado:</strong> ${t.estado}<br/>
+          <strong>Médico:</strong> ${t.medico.usuario.nombre}<br/>
+          <strong>Especialidad:</strong> ${t.medico.especialidad}
+        `;
+        contenedor.appendChild(div);
+      });
+    }
+
+    // Inicio
+    obtenerPacienteId();
+  </script>
+</body>
+</html>

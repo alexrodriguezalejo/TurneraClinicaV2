@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro - Clínica Rodríguez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Clínica Rodríguez</a>
+    </div>
+  </nav>
+
+  <!-- FORMULARIO -->
+  <section class="register-section">
+    <div class="login-box">
+      <h2>Registrarse</h2>
+      <form id="registroForm">
+        <div class="mb-3">
+          <input type="text" name="nombre" class="form-control" placeholder="Nombre completo" required />
+        </div>
+        <div class="mb-3">
+          <input type="email" name="correo" class="form-control" placeholder="Correo" required />
+        </div>
+        <div class="mb-3">
+          <input type="password" name="contraseña" class="form-control" placeholder="Contraseña" required />
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-dark">Registrarse</button>
+        </div>
+      </form>
+      <p id="mensaje" class="mt-3 text-center"></p>
+      <div class="text-center mt-3">
+        <a href="/">← Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    document.getElementById("registroForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = {
+        nombre: formData.get("nombre"),
+        correo: formData.get("correo"),
+        contraseña: formData.get("contraseña")
+      };
+
+      try {
+        const response = await fetch("/api/auth/registro", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          document.getElementById("mensaje").textContent = "Usuario registrado correctamente. Redirigiendo...";
+          document.getElementById("mensaje").classList.remove("text-danger");
+          document.getElementById("mensaje").classList.add("text-success");
+          setTimeout(() => {
+            window.location.href = "./login.html";
+          }, 2000);
+        } else {
+          document.getElementById("mensaje").textContent = "Error al registrarse. ¿Correo duplicado?";
+          document.getElementById("mensaje").classList.remove("text-success");
+          document.getElementById("mensaje").classList.add("text-danger");
+        }
+      } catch (err) {
+        document.getElementById("mensaje").textContent = "Error de conexión con el servidor.";
+        document.getElementById("mensaje").classList.remove("text-success");
+        document.getElementById("mensaje").classList.add("text-danger");
+      }
+    });
+  </script>
+</body>
+</html>

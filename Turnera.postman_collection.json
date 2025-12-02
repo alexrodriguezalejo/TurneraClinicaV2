@@ -1,0 +1,1910 @@
+{
+	"info": {
+		"_postman_id": "4dc04c51-2c25-4b08-9361-731a32cb1a5e",
+		"name": "Turnera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46632787"
+	},
+	"item": [
+		{
+			"name": "Login Admin",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"admin@gmail.com\",\r\n  \"contraseña\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"usuario@gmail.com\",\r\n  \"contraseña\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Paciente",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"paciente@gmail.com\",\r\n  \"contraseña\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Medico",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"medico@gmail.com\",\r\n  \"contraseña\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver datos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Medicos (ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTQ3ODMsImV4cCI6MTc1MjQ0MTE4M30._3eWGOJ1CDLgBAEtViUYAn8HH6zVM8x3kMMFDx9HURk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/medicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Pacientes (ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTQ3ODMsImV4cCI6MTc1MjQ0MTE4M30._3eWGOJ1CDLgBAEtViUYAn8HH6zVM8x3kMMFDx9HURk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pacientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Turnos (ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTQ3ODMsImV4cCI6MTc1MjQ0MTE4M30._3eWGOJ1CDLgBAEtViUYAn8HH6zVM8x3kMMFDx9HURk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Turnos Paciente (PACIENTE)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWNpZW50ZUBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTUzOTksImV4cCI6MTc1MjQ0MTc5OX0.KHWAPqBuVvdvZqHz6d9NBaEGtMgS8Sl0CCI1nKSoqBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/paciente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"paciente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Turnos Medico (MEDICO)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRpY29AZ21haWwuY29tIiwiaWF0IjoxNzUyMzU1NTQ2LCJleHAiOjE3NTI0NDE5NDZ9.cIsoOetcis9JwIL6X5vesJDHP5QXOhfYyBqYAZBnjqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/medico/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"medico",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Turnos Disponibles x Medico (PACIENTE?)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWNpZW50ZUBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTUzOTksImV4cCI6MTc1MjQ0MTc5OX0.KHWAPqBuVvdvZqHz6d9NBaEGtMgS8Sl0CCI1nKSoqBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/disponibles/medico/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"disponibles",
+						"medico",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Turnos Disponibles x Especialidad (PACIENTE?)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWNpZW50ZUBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTUzOTksImV4cCI6MTc1MjQ0MTc5OX0.KHWAPqBuVvdvZqHz6d9NBaEGtMgS8Sl0CCI1nKSoqBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/disponibles/especialidad/cardiologia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"disponibles",
+						"especialidad",
+						"cardiologia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Medico por ID (ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTQ3ODMsImV4cCI6MTc1MjQ0MTE4M30._3eWGOJ1CDLgBAEtViUYAn8HH6zVM8x3kMMFDx9HURk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/medicos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medicos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Medico por correo (ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTQ3ODMsImV4cCI6MTc1MjQ0MTE4M30._3eWGOJ1CDLgBAEtViUYAn8HH6zVM8x3kMMFDx9HURk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=003D7D1B8E48A56DB0B8A2E3F9A9F958",
+						"name": "cookie",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/medicos/correo/medico/correo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medicos",
+						"correo",
+						"medico",
+						"correo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"pacientetest@gmail.com\",\r\n  \"contraseña\": \"1234\",\r\n  \"nombre\": \"Usuario Paciente\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario con Roles (ADMIN)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTA2NTQsImV4cCI6MTc1MjQzNzA1NH0.XhAQwudR9Jcg5u6jJngklJS3jnsyfpkiGKZskcr8-28",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"Paciente@gmail.com\",\r\n  \"contraseña\": \"1234\",\r\n  \"nombre\": \"Paciente\",\r\n  \"rolesIds\": [3]  // 1 Admin, 2 Medico, 3 Paciente, 4 Usuarioel ID del rol que quieras asignar\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/usuarios/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convertir Usuario a Paciente (USUARIO)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWNpZW50ZXRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzUyMzUxMTU1LCJleHAiOjE3NTI0Mzc1NTV9.lm8LwQTqzMveGRlhA4gbK58w764kaE7PGaPFHtlVTr4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"pacientetest@gmail.com\",\r\n  \"dni\": \"123456789\",\r\n  \"telefono\": \"1122334455\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pacientes/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pacientes",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convertir Usuario a Medico (MEDICO)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWNpZW50ZXRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzUyMzUxMTU1LCJleHAiOjE3NTI0Mzc1NTV9.lm8LwQTqzMveGRlhA4gbK58w764kaE7PGaPFHtlVTr4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"pacientetest@gmail.com\",\r\n  \"dni\": \"123456789\",\r\n  \"telefono\": \"1122334455\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/medicos/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medicos",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar roles (ADMIN)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTIwNzksImV4cCI6MTc1MjQzODQ3OX0.A5VC6ToHu7Y5tH8-vr_McwxIsWrhr-syLExVlFdcs1s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rolesIds\": [4]  // Rol que quieras setear al id, en este caso al 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/usuarios/5/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"5",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Turno (ADMIN)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTI1NDQ3ODMsImV4cCI6MTc1MjYzMTE4M30.KvWAZr8BFyFtQIVi1TzXHxIC7Z5mfVfUM20Jod2TBs0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pacienteId\": 2,\r\n  \"medicoId\": 1,\r\n  \"fecha\": \"2025-07-20\",\r\n  \"hora\": \"10:30\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver agenda medica (MEDICO y ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRpY29AZ21haWwuY29tIiwiaWF0IjoxNzUyMzUzNDYyLCJleHAiOjE3NTI0Mzk4NjJ9.UWyCnv69EO6zyztbbDlv_0hihAl_ckuifQJyZXXWPDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/agenda/medico/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"agenda",
+						"medico",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Agenda (MEDICO)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRpY29AZ21haWwuY29tIiwiaWF0IjoxNzUyMzUzNDYyLCJleHAiOjE3NTI0Mzk4NjJ9.UWyCnv69EO6zyztbbDlv_0hihAl_ckuifQJyZXXWPDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"medicoId\": 1,\r\n  \"mañanaInicio\": \"08:00\",\r\n  \"mañanaFin\": \"12:00\",\r\n  \"tardeInicio\": \"13:00\",\r\n  \"tardeFin\": \"17:00\",\r\n  \"duracionTurno\": 30\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/agenda/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"agenda",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modficar agenda (MEDICO)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRpY29AZ21haWwuY29tIiwiaWF0IjoxNzUyMzUzNDYyLCJleHAiOjE3NTI0Mzk4NjJ9.UWyCnv69EO6zyztbbDlv_0hihAl_ckuifQJyZXXWPDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"medicoId\": 1,\r\n  \"mañanaInicio\": \"08:30\",\r\n  \"mañanaFin\": \"12:00\",\r\n  \"tardeInicio\": \"13:30\",\r\n  \"tardeFin\": \"17:00\",\r\n  \"duracionTurno\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/agenda/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"agenda",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar turnos del dia (MEDICO)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRpY29AZ21haWwuY29tIiwiaWF0IjoxNzUyMzUzNDYyLCJleHAiOjE3NTI0Mzk4NjJ9.UWyCnv69EO6zyztbbDlv_0hihAl_ckuifQJyZXXWPDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"medicoId\": 1,\r\n  \"fecha\": \"2025-07-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/generar-dia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"generar-dia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Turno (MEDICO y PACIENTE)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWNpZW50ZUBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTM4OTYsImV4cCI6MTc1MjQ0MDI5Nn0.MISj6GxV-_d9HP4YXRYKxu-JpzAK41zpZCiS-5UmACU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// En este caso cancelamos el turno con ID 1",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/1/cancelar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"1",
+						"cancelar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservar Turno (PACIENTE)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWNpZW50ZUBnbWFpbC5jb20iLCJpYXQiOjE3NTIzNTM4OTYsImV4cCI6MTc1MjQ0MDI5Nn0.MISj6GxV-_d9HP4YXRYKxu-JpzAK41zpZCiS-5UmACU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//http://localhost:8080/api/turnos/4/reservar?pacienteId=2\r\n// El 4 seria el id del turno y lo reserva el paciente con id 2\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/turnos/13/reservar?pacienteId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"turnos",
+						"13",
+						"reservar"
+					],
+					"query": [
+						{
+							"key": "pacienteId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
